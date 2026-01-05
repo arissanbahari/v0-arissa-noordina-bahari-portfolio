@@ -1,0 +1,196 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* New futuristic AI aesthetic with purple gradients */
+  --background: rgb(247, 244, 251); /* Light mode: #F7F4FB */
+  --foreground: rgb(15, 14, 23); /* Dark text: #0F0E17 */
+  --card: rgb(255, 255, 255);
+  --card-foreground: rgb(15, 14, 23);
+  --popover: rgb(255, 255, 255);
+  --popover-foreground: rgb(15, 14, 23);
+  --primary: rgb(217, 199, 252); /* Primary purple: #D9C7FC */
+  --primary-foreground: rgb(15, 14, 23);
+  --secondary: rgb(110, 70, 195); /* Secondary purple: #6E46C3 */
+  --secondary-foreground: rgb(255, 255, 255);
+  --muted: rgb(229, 229, 234);
+  --muted-foreground: rgb(107, 114, 128);
+  --accent: rgb(139, 92, 246); /* Accent purple */
+  --accent-foreground: rgb(255, 255, 255);
+  --destructive: rgb(239, 68, 68);
+  --destructive-foreground: rgb(255, 255, 255);
+  --border: rgb(229, 229, 234);
+  --input: rgb(229, 229, 234);
+  --ring: rgb(217, 199, 252);
+  --chart-1: rgb(217, 199, 252);
+  --chart-2: rgb(110, 70, 195);
+  --chart-3: rgb(139, 92, 246);
+  --chart-4: rgb(196, 181, 253);
+  --chart-5: rgb(167, 139, 250);
+  --radius: 16px; /* 8pt grid system */
+
+  /* Glassmorphism variables */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: rgba(0, 0, 0, 0.1);
+
+  --sidebar: rgb(255, 255, 255);
+  --sidebar-foreground: rgb(15, 14, 23);
+  --sidebar-primary: rgb(217, 199, 252);
+  --sidebar-primary-foreground: rgb(15, 14, 23);
+  --sidebar-accent: rgb(110, 70, 195);
+  --sidebar-accent-foreground: rgb(255, 255, 255);
+  --sidebar-border: rgb(229, 229, 234);
+  --sidebar-ring: rgb(217, 199, 252);
+}
+
+.dark {
+  /* Dark mode with deep background */
+  --background: rgb(15, 14, 23); /* Dark mode: #0F0E17 */
+  --foreground: rgb(247, 244, 251);
+  --card: rgb(31, 29, 43);
+  --card-foreground: rgb(247, 244, 251);
+  --popover: rgb(31, 29, 43);
+  --popover-foreground: rgb(247, 244, 251);
+  --primary: rgb(217, 199, 252);
+  --primary-foreground: rgb(15, 14, 23);
+  --secondary: rgb(110, 70, 195);
+  --secondary-foreground: rgb(255, 255, 255);
+  --muted: rgb(55, 65, 81);
+  --muted-foreground: rgb(156, 163, 175);
+  --accent: rgb(139, 92, 246);
+  --accent-foreground: rgb(255, 255, 255);
+  --destructive: rgb(239, 68, 68);
+  --destructive-foreground: rgb(255, 255, 255);
+  --border: rgb(55, 65, 81);
+  --input: rgb(55, 65, 81);
+  --ring: rgb(217, 199, 252);
+  --chart-1: rgb(217, 199, 252);
+  --chart-2: rgb(110, 70, 195);
+  --chart-3: rgb(139, 92, 246);
+  --chart-4: rgb(196, 181, 253);
+  --chart-5: rgb(167, 139, 250);
+
+  --glass-bg: rgba(0, 0, 0, 0.3);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: rgba(0, 0, 0, 0.3);
+
+  --sidebar: rgb(31, 29, 43);
+  --sidebar-foreground: rgb(247, 244, 251);
+  --sidebar-primary: rgb(217, 199, 252);
+  --sidebar-primary-foreground: rgb(15, 14, 23);
+  --sidebar-accent: rgb(139, 92, 246);
+  --sidebar-accent-foreground: rgb(255, 255, 255);
+  --sidebar-border: rgb(55, 65, 81);
+  --sidebar-ring: rgb(217, 199, 252);
+}
+
+@theme inline {
+  /* Updated to DM Sans and Inter typography */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "DM Sans", system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 8px);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+
+  /* Modern heading styles with DM Sans */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* New glassmorphism and modern utilities */
+@layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 var(--glass-shadow);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, rgb(217, 199, 252) 0%, rgb(110, 70, 195) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, rgb(217, 199, 252) 0%, rgb(110, 70, 195) 100%);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 20px rgba(217, 199, 252, 0.5), 0 0 40px rgba(110, 70, 195, 0.3);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .grid-8 {
+    gap: 2rem; /* 8pt grid: 32px */
+  }
+}
